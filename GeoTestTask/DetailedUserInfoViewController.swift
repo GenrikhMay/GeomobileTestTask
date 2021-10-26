@@ -24,9 +24,9 @@ class UserDetailsViewModel {
 }
 
 class DetailedUserInfoViewController: UIViewController {
-    let userImage = UIImageView()
-    let userNameLabel = UILabel()
-    let emailLabel = UILabel()
+    private let userImage = UIImageView()
+    private let userNameLabel = UILabel()
+    private let emailLabel = UILabel()
 
     let viewModel: UserDetailsViewModel
 

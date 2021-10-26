@@ -10,9 +10,8 @@ import UIKit
 import Kingfisher
 
 class UserCellView: UITableViewCell {
-
-    let userImage = UIImageView()
-    let userNameLabel = UILabel()
+    private let userImage = UIImageView()
+    private let userNameLabel = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

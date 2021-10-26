@@ -13,6 +13,10 @@ protocol UsersNetworkServiceProtocol {
 }
 
 class UsersNetworkService: UsersNetworkServiceProtocol {
+    enum Endpoints: String {
+        case getUser = "https://reqres.in/api/users"
+    }
+
     let networkService: NetworkServiceProtocol = NetworkService()
 
     func getUsers() -> Observable<GetUsersNetworkResponse> {

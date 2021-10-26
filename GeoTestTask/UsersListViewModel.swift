@@ -11,9 +11,8 @@ import RxSwift
 
 class UsersListViewModel {
     public var users: PublishSubject<[User]> = PublishSubject()
-
-    let userService: UsersNetworkServiceProtocol = UsersNetworkService()
-    let disposeBag = DisposeBag()
+    private let userService: UsersNetworkServiceProtocol = UsersNetworkService()
+    private let disposeBag = DisposeBag()
 
     func getUsers() {
         userService.getUsers()

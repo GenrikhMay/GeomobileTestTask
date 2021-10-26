@@ -11,11 +11,20 @@ import RxDataSources
 import RxSwift
 
 class ViewController: UIViewController {
-    let viewModel = UsersListViewModel()
-    let tableView = UITableView()
+    let viewModel: UsersListViewModel
+    private let tableView = UITableView()
     private let cellIdentidier = "UserCellId"
 
     let disposeBag = DisposeBag()
+
+    init(viewModel: UsersListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +33,6 @@ class ViewController: UIViewController {
     }
 
     private func showDetailScreen(user: User) {
-//        let detailVC = DetailedUserInfoViewController(user: user)
-//        present(detailVC, animated: true)
         let detailVC = DetailedUserInfoViewController(viewModel: UserDetailsViewModel(with: user))
         navigationController?.pushViewController(detailVC, animated: true)
     }

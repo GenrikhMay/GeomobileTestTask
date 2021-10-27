@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		583C33F32726CEF400B2016E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C33F22726CEF400B2016E /* AppDelegate.swift */; };
 		583C33F52726CEF400B2016E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C33F42726CEF400B2016E /* SceneDelegate.swift */; };
-		583C33F72726CEF400B2016E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C33F62726CEF400B2016E /* ViewController.swift */; };
+		583C33F72726CEF400B2016E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C33F62726CEF400B2016E /* HomeViewController.swift */; };
 		583C33FD2726CEF500B2016E /* GeoTestTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 583C33FB2726CEF500B2016E /* GeoTestTask.xcdatamodeld */; };
 		583C33FF2726CEF500B2016E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 583C33FE2726CEF500B2016E /* Assets.xcassets */; };
 		583C34022726CEF500B2016E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 583C34002726CEF500B2016E /* LaunchScreen.storyboard */; };
@@ -17,11 +17,16 @@
 		583C34182726CEF500B2016E /* GeoTestTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C34172726CEF500B2016E /* GeoTestTaskUITests.swift */; };
 		58D266D22727FF5D00642F5C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266D12727FF5D00642F5C /* NetworkService.swift */; };
 		58D266D42727FF8F00642F5C /* UsersNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266D32727FF8F00642F5C /* UsersNetworkService.swift */; };
-		58D266D62727FF9B00642F5C /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266D52727FF9B00642F5C /* Endpoints.swift */; };
 		58D266D8272800CF00642F5C /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266D7272800CF00642F5C /* UsersListViewModel.swift */; };
 		58D266DA2728039200642F5C /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266D92728039200642F5C /* UserCellView.swift */; };
 		58D266DC2728057300642F5C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266DB2728057300642F5C /* UserModel.swift */; };
 		58D266DE272819D500642F5C /* DetailedUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266DD272819D500642F5C /* DetailedUserInfoViewController.swift */; };
+		58D266E127284AB700642F5C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266E027284AB700642F5C /* CoreDataStack.swift */; };
+		58D266E327284D7300642F5C /* UsersCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266E227284D7300642F5C /* UsersCoreDataService.swift */; };
+		58D266E72729567E00642F5C /* PersistableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266E62729567E00642F5C /* PersistableUser.swift */; };
+		58D266E9272956C800642F5C /* UserNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266E8272956C800642F5C /* UserNetworkResponse.swift */; };
+		58D266ED2729575300642F5C /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266EC2729575300642F5C /* UserDetailsViewModel.swift */; };
+		58D266EF27295DE700642F5C /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D266EE27295DE700642F5C /* CoreDataError.swift */; };
 		7097C786148E93101008A9FE /* Pods_GeoTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF925C743362F3CBD9883D71 /* Pods_GeoTestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +51,7 @@
 		583C33EF2726CEF400B2016E /* GeoTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		583C33F22726CEF400B2016E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		583C33F42726CEF400B2016E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		583C33F62726CEF400B2016E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		583C33F62726CEF400B2016E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		583C33FC2726CEF500B2016E /* GeoTestTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GeoTestTask.xcdatamodel; sourceTree = "<group>"; };
 		583C33FE2726CEF500B2016E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		583C34012726CEF500B2016E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,11 +64,16 @@
 		583C34192726CEF500B2016E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58D266D12727FF5D00642F5C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		58D266D32727FF8F00642F5C /* UsersNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersNetworkService.swift; sourceTree = "<group>"; };
-		58D266D52727FF9B00642F5C /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		58D266D7272800CF00642F5C /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
 		58D266D92728039200642F5C /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		58D266DB2728057300642F5C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		58D266DD272819D500642F5C /* DetailedUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedUserInfoViewController.swift; sourceTree = "<group>"; };
+		58D266E027284AB700642F5C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		58D266E227284D7300642F5C /* UsersCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCoreDataService.swift; sourceTree = "<group>"; };
+		58D266E62729567E00642F5C /* PersistableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistableUser.swift; sourceTree = "<group>"; };
+		58D266E8272956C800642F5C /* UserNetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkResponse.swift; sourceTree = "<group>"; };
+		58D266EC2729575300642F5C /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
+		58D266EE27295DE700642F5C /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		6841625BFF30EBD9AAED2FC3 /* Pods-GeoTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoTestTask.release.xcconfig"; path = "Target Support Files/Pods-GeoTestTask/Pods-GeoTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		8BB1A935131A9288CBA1C0A3 /* Pods-GeoTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoTestTask.debug.xcconfig"; path = "Target Support Files/Pods-GeoTestTask/Pods-GeoTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 		AF925C743362F3CBD9883D71 /* Pods_GeoTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,18 +139,16 @@
 		583C33F12726CEF400B2016E /* GeoTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				58D266D02727FF4C00642F5C /* Network */,
 				583C33F22726CEF400B2016E /* AppDelegate.swift */,
 				583C33F42726CEF400B2016E /* SceneDelegate.swift */,
-				583C33F62726CEF400B2016E /* ViewController.swift */,
+				58D266DB2728057300642F5C /* UserModel.swift */,
+				58D266EA272956E300642F5C /* HomeScreen */,
+				58D266EB272956FB00642F5C /* UserDetailScreen */,
+				58D266DF27284AA800642F5C /* Core Data */,
+				58D266D02727FF4C00642F5C /* Network */,
 				583C33FE2726CEF500B2016E /* Assets.xcassets */,
 				583C34002726CEF500B2016E /* LaunchScreen.storyboard */,
 				583C34032726CEF500B2016E /* Info.plist */,
-				583C33FB2726CEF500B2016E /* GeoTestTask.xcdatamodeld */,
-				58D266D7272800CF00642F5C /* UsersListViewModel.swift */,
-				58D266D92728039200642F5C /* UserCellView.swift */,
-				58D266DB2728057300642F5C /* UserModel.swift */,
-				58D266DD272819D500642F5C /* DetailedUserInfoViewController.swift */,
 			);
 			path = GeoTestTask;
 			sourceTree = "<group>";
@@ -168,9 +176,40 @@
 			children = (
 				58D266D12727FF5D00642F5C /* NetworkService.swift */,
 				58D266D32727FF8F00642F5C /* UsersNetworkService.swift */,
-				58D266D52727FF9B00642F5C /* Endpoints.swift */,
+				58D266E8272956C800642F5C /* UserNetworkResponse.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		58D266DF27284AA800642F5C /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				583C33FB2726CEF500B2016E /* GeoTestTask.xcdatamodeld */,
+				58D266E027284AB700642F5C /* CoreDataStack.swift */,
+				58D266E227284D7300642F5C /* UsersCoreDataService.swift */,
+				58D266E62729567E00642F5C /* PersistableUser.swift */,
+				58D266EE27295DE700642F5C /* CoreDataError.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		58D266EA272956E300642F5C /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				583C33F62726CEF400B2016E /* HomeViewController.swift */,
+				58D266D92728039200642F5C /* UserCellView.swift */,
+				58D266D7272800CF00642F5C /* UsersListViewModel.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		58D266EB272956FB00642F5C /* UserDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				58D266DD272819D500642F5C /* DetailedUserInfoViewController.swift */,
+				58D266EC2729575300642F5C /* UserDetailsViewModel.swift */,
+			);
+			path = UserDetailScreen;
 			sourceTree = "<group>";
 		};
 		7B7A06C965BE7E797B3E3CA1 /* Frameworks */ = {
@@ -355,16 +394,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D266D22727FF5D00642F5C /* NetworkService.swift in Sources */,
-				583C33F72726CEF400B2016E /* ViewController.swift in Sources */,
+				58D266E327284D7300642F5C /* UsersCoreDataService.swift in Sources */,
+				58D266E72729567E00642F5C /* PersistableUser.swift in Sources */,
+				583C33F72726CEF400B2016E /* HomeViewController.swift in Sources */,
 				583C33F32726CEF400B2016E /* AppDelegate.swift in Sources */,
 				58D266DE272819D500642F5C /* DetailedUserInfoViewController.swift in Sources */,
-				58D266D62727FF9B00642F5C /* Endpoints.swift in Sources */,
+				58D266ED2729575300642F5C /* UserDetailsViewModel.swift in Sources */,
+				58D266E127284AB700642F5C /* CoreDataStack.swift in Sources */,
 				583C33FD2726CEF500B2016E /* GeoTestTask.xcdatamodeld in Sources */,
 				58D266D8272800CF00642F5C /* UsersListViewModel.swift in Sources */,
 				583C33F52726CEF400B2016E /* SceneDelegate.swift in Sources */,
+				58D266EF27295DE700642F5C /* CoreDataError.swift in Sources */,
 				58D266DA2728039200642F5C /* UserCellView.swift in Sources */,
 				58D266DC2728057300642F5C /* UserModel.swift in Sources */,
 				58D266D42727FF8F00642F5C /* UsersNetworkService.swift in Sources */,
+				58D266E9272956C800642F5C /* UserNetworkResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

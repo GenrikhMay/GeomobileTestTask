@@ -14,6 +14,7 @@ protocol NetworkServiceProtocol {
 
 enum NetworkError: Error {
     case unableToDecode
+    case dataFailure
     case unknown
 }
 
@@ -28,7 +29,10 @@ public class NetworkService: NetworkServiceProtocol {
                     do {
                         switch statusCode {
                         case 200...399:
-                            let _data = data ?? Data()
+                            guard let _data = data
+                            else {
+                                throw NetworkError.dataFailure
+                            }
                             let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let result = try decoder.decode(T.self, from:_data)
@@ -39,6 +43,8 @@ public class NetworkService: NetworkServiceProtocol {
                     } catch let error {
                         observer.onError(error)
                     }
+                } else {
+                    observer.onError(NetworkError.unknown)
                 }
                 observer.onCompleted()
             }

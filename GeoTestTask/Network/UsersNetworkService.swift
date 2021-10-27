@@ -17,7 +17,11 @@ class UsersNetworkService: UsersNetworkServiceProtocol {
         case getUser = "https://reqres.in/api/users"
     }
 
-    let networkService: NetworkServiceProtocol = NetworkService()
+    let networkService: NetworkServiceProtocol
+
+    init(networkService: NetworkServiceProtocol = NetworkService()) {
+        self.networkService = networkService
+    }
 
     func getUsers() -> Observable<GetUsersNetworkResponse> {
         let url = URL(string: Endpoints.getUser.rawValue)!

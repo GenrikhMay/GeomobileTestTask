@@ -45,8 +45,10 @@ class UserCellView: UITableViewCell {
         contentView.addSubview(userNameLabel)
     }
 
-    func update(name: String, imageURL: String) {
+    func update(name: String, imageURL: String?) {
         userNameLabel.text = name
-        userImage.kf.setImage(with: URL(string: imageURL))
+        if let urlString = imageURL, let url = URL(string: urlString) {
+            userImage.kf.setImage(with: url, placeholder: UIImage(systemName: "person"))
+        }
     }
 }

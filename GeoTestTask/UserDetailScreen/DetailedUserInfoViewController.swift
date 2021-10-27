@@ -11,18 +11,6 @@ import Kingfisher
 import RxSwift
 import RxCocoa
 
-class UserDetailsViewModel {
-    public var userName: Observable<String>
-    public var userEmail: Observable<String>
-    public var avatarURL: Observable<String>
-
-    init(with user: User) {
-        userName = Observable.just(user.fullName)
-        userEmail = Observable.just(user.email)
-        avatarURL = Observable.just(user.avatar)
-    }
-}
-
 class DetailedUserInfoViewController: UIViewController {
     private let userImage = UIImageView()
     private let userNameLabel = UILabel()
@@ -48,7 +36,9 @@ class DetailedUserInfoViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         viewModel.avatarURL.subscribe(onNext: { newURL in
-            self.userImage.kf.setImage(with: URL(string: newURL))
+            if let urlString = newURL, let url = URL(string: urlString) {
+                self.userImage.kf.setImage(with: url, placeholder: UIImage(systemName: "person"))
+            }
         })
         .disposed(by: disposeBag)
     }

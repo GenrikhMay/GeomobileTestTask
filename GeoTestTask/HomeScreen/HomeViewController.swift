@@ -10,7 +10,7 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     let viewModel: UsersListViewModel
     private let tableView = UITableView()
     private let cellIdentidier = "UserCellId"
@@ -73,8 +73,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate {
-
+extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }

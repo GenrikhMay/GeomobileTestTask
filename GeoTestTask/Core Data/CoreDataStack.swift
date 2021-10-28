@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-class CoreDataStack {
+final class CoreDataStack {
     private init() {}
 
     static let shared = CoreDataStack()

@@ -17,7 +17,7 @@ protocol UsersPersistentStorageServiceProtocol: AnyObject {
     func fetchDataFromStorage() -> Observable <[User]>
 }
 
-class UsersPersistentStorageService: UsersPersistentStorageServiceProtocol {
+final class UsersPersistentStorageService: UsersPersistentStorageServiceProtocol {
     private let disposeBag = DisposeBag()
 
     private var managedObjectContext: NSManagedObjectContext? {

@@ -11,7 +11,7 @@ import Kingfisher
 import RxSwift
 import RxCocoa
 
-class DetailedUserInfoViewController: UIViewController {
+final class DetailedUserInfoViewController: UIViewController {
     private let userImage = UIImageView()
     private let userNameLabel = UILabel()
     private let emailLabel = UILabel()
@@ -48,6 +48,8 @@ class DetailedUserInfoViewController: UIViewController {
         view.addSubview(userNameLabel)
         view.addSubview(userImage)
         view.addSubview(emailLabel)
+
+        navigationController?.navigationBar.barTintColor = UIColor.white
 
         userImage.translatesAutoresizingMaskIntoConstraints = false
         userImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 32).isActive = true

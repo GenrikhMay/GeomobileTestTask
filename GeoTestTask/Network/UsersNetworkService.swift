@@ -12,7 +12,7 @@ protocol UsersNetworkServiceProtocol {
     func getUsers() -> Observable<GetUsersNetworkResponse>
 }
 
-class UsersNetworkService: UsersNetworkServiceProtocol {
+final class UsersNetworkService: UsersNetworkServiceProtocol {
     enum Endpoints: String {
         case getUser = "https://reqres.in/api/users"
     }
@@ -24,8 +24,6 @@ class UsersNetworkService: UsersNetworkServiceProtocol {
     }
 
     func getUsers() -> Observable<GetUsersNetworkResponse> {
-        let url = URL(string: Endpoints.getUser.rawValue)!
-        let req = URLRequest(url: url)
-        return networkService.fetch(request: req)
+        return networkService.fetch(url: Endpoints.getUser.rawValue)
     }
 }

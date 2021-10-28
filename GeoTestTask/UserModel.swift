@@ -15,9 +15,8 @@ struct User: Codable {
     var firstName: String
     var lastName: String?
     var avatar: String?
-
     var fullName: String {
-        firstName + (lastName ?? "")
+        firstName + " " + (lastName ?? "")
     }
 
     internal init(id: Int, email: String, firstName: String, lastName: String? = nil, avatar: String? = nil) {

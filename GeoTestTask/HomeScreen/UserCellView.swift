@@ -8,18 +8,38 @@
 import Foundation
 import UIKit
 import Kingfisher
+import RxSwift
 
-class UserCellView: UITableViewCell {
+final class UserCellView: UITableViewCell {
     private let userImage = UIImageView()
     private let userNameLabel = UILabel()
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    let viewModel: UserCellViewModel = UserCellViewModel()
+
+    private let disposeBag = DisposeBag()
+
+    override init(
+        style: UITableViewCell.CellStyle,
+        reuseIdentifier: String?
+    ){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
-     }
+    }
 
-     required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    func setData(user: User) {
+        viewModel.userName.bind(to: userNameLabel.rx.text).disposed(by: disposeBag)
+        viewModel.userName.onNext(user.fullName)
+        viewModel.userAvatar.subscribe(onNext: { newURL in
+            if let urlString = user.avatar, let url = URL(string: urlString) {
+                self.userImage.kf.setImage(with: url, placeholder: UIImage(systemName: "person"))
+            }
+        })
+        .disposed(by: disposeBag)
+        viewModel.userAvatar.onNext(user.avatar)
     }
 
     func setup() {
@@ -43,12 +63,5 @@ class UserCellView: UITableViewCell {
 
         contentView.addSubview(userImage)
         contentView.addSubview(userNameLabel)
-    }
-
-    func update(name: String, imageURL: String?) {
-        userNameLabel.text = name
-        if let urlString = imageURL, let url = URL(string: urlString) {
-            userImage.kf.setImage(with: url, placeholder: UIImage(systemName: "person"))
-        }
     }
 }

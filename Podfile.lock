@@ -16,10 +16,10 @@ PODS:
   - RxSwift (6.2.0)
 
 DEPENDENCIES:
-  - Kingfisher (~> 7.0)
+  - Kingfisher (= 7.1.1)
   - RxCocoa (= 6.2.0)
-  - RxCoreData (~> 1.0.0)
-  - RxDataSources (~> 5.0)
+  - RxCoreData (= 1.0.1)
+  - RxDataSources (= 5.0)
   - RxSwift (= 6.2.0)
 
 SPEC REPOS:
@@ -41,6 +41,6 @@ SPEC CHECKSUMS:
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
 
-PODFILE CHECKSUM: 090252dd77bf7c4d9d3e29b2abb7202d7c77b889
+PODFILE CHECKSUM: fb2a064c9dee926bdce040d8a18f5ff91846e98d
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

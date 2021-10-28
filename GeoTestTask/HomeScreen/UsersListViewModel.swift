@@ -9,7 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class UsersListViewModel {
+final class UsersListViewModel {
     public var users: PublishSubject<[User]> = .init()
     private let userNetworkService: UsersNetworkServiceProtocol
     private let userLocalStorageService: UsersPersistentStorageServiceProtocol

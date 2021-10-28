@@ -10,7 +10,7 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     let viewModel: UsersListViewModel
     private let tableView = UITableView()
     private let cellIdentidier = "UserCellId"
@@ -28,8 +28,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor.white
         setupTableView()
         viewModel.getUsers()
+        self.title = "User list"
     }
 
     private func showDetailScreen(user: User) {
@@ -56,7 +58,7 @@ class HomeViewController: UIViewController {
                 cellType: UserCellView.self
             )
         ) { row, item, cell in
-            cell.update(name: item.fullName, imageURL: item.avatar)
+            cell.setData(user: item)
         }
         .disposed(by: disposeBag)
 

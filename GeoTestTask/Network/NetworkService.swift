@@ -9,20 +9,20 @@ import Foundation
 import RxSwift
 
 protocol NetworkServiceProtocol {
-    func fetch<T: Decodable>(request: URLRequest) -> Observable<T>
-}
-
-enum NetworkError: Error {
-    case unableToDecode
-    case dataFailure
-    case unknown
+    func fetch<T: Decodable>(url: String) -> Observable<T>
 }
 
 public class NetworkService: NetworkServiceProtocol {
     let session = URLSession(configuration:URLSessionConfiguration.default)
 
-    func fetch<T: Decodable>(request: URLRequest) -> Observable<T> {
+    func fetch<T: Decodable>(url: String) -> Observable<T> {
         return Observable.create { observer in
+            guard let url = URL(string: url)
+            else {
+                observer.onError(NetworkError.badURL)
+                return Disposables.create()
+            }
+            let request = URLRequest(url: url)
             let task = self.session.dataTask(with: request) { data, response, error in
                 if let httpResponse = response as? HTTPURLResponse {
                     let statusCode = httpResponse.statusCode

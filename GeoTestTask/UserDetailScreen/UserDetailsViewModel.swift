@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class UserDetailsViewModel {
+final class UserDetailsViewModel {
     public var userName: BehaviorSubject<String>
     public var userEmail: BehaviorSubject<String>
     public var avatarURL: BehaviorSubject<String?>
